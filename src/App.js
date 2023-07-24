@@ -23,10 +23,14 @@ const App=()=> {
       date: new Date(2021, 5, 12),
     },
   ];
-  
+  const addExpensehandler=(expense)=>{
+    console.log('inApp.js');
+    console.log(expense);
+
+  }
   return (
     <div>
-        <ExpenseForm/>
+        <NewExpense onAddExpense={addExpensehandler}/>
         <Expenses items={expenses}/>
     </div>
       
