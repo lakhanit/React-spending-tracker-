@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses"
-import ExpenseForm from "./components/NewExpense/ExpenseForm";
+
 
 const dummy_expenses = [
   {
@@ -35,6 +35,7 @@ const App=()=> {
     setExpenses(prevExpenses=>{
       return [expense,...expenses]
     });
+
   }
   return (
     <div>
