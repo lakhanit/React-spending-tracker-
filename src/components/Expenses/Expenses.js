@@ -9,11 +9,11 @@ import "./Expenses.css";
 const Expenses = (props) => {
   const [enteredYear, setEnteredYear] = useState("2020");
   
-  const changeYearHandler=(enteredYear)=>{
+  const changeYearHandler=(selectedYear)=>{
     console.log(enteredYear);
-    setEnteredYear(enteredYear);
+    setEnteredYear(selectedYear);
   }
-  let filteredArray=props.items.filter(item=>{
+const filteredArray=props.items.filter(item=>{
     return item.date.getFullYear().toString()===enteredYear;
   })
   
@@ -24,8 +24,9 @@ const Expenses = (props) => {
           selected={enteredYear}
           onChangeYear={changeYearHandler}
         />
-        <ExpensesChart expenses={filteredArray} />
-        <ExpensesList items={filteredArray} />
+     <ExpensesChart expenses={filteredArray}/> 
+     <ExpensesList items={filteredArray} />
+     
       </Card>
     </div>
   );
